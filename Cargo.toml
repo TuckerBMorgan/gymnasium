@@ -8,3 +8,4 @@ edition = "2018"
 
 [dependencies]
 rand = "0.7"
+wrapped2d = "0.4.1"

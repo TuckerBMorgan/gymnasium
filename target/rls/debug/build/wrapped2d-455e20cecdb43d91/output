@@ -1,0 +1,206 @@
+cargo:rustc-link-lib=static=Box2D
+running: "cmake" "/Users/hiroko/.cargo/registry/src/github.com-1ecc6299db9ec823/wrapped2d-0.4.1/Box2D/Box2D" "-DBOX2D_BUILD_STATIC=ON" "-DBOX2D_INSTALL=ON" "-DBOX2D_BUILD_SHARED=OFF" "-DBOX2D_BUILD_EXAMPLES=OFF" "-DBOX2D_INSTALL_DOC=OFF" "-DCMAKE_INSTALL_PREFIX=/Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out" "-DCMAKE_C_FLAGS= -ffunction-sections -fdata-sections -fPIC -m64 -arch x86_64" "-DCMAKE_C_COMPILER=/usr/bin/cc" "-DCMAKE_CXX_FLAGS= -ffunction-sections -fdata-sections -fPIC -m64 -arch x86_64" "-DCMAKE_CXX_COMPILER=/usr/bin/c++" "-DCMAKE_ASM_FLAGS= -ffunction-sections -fdata-sections -fPIC -m64 -arch x86_64" "-DCMAKE_ASM_COMPILER=/usr/bin/cc" "-DCMAKE_BUILD_TYPE=Debug"
+-- The C compiler identification is AppleClang 11.0.0.11000033
+-- The CXX compiler identification is AppleClang 11.0.0.11000033
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/build
+running: "cmake" "--build" "." "--target" "install" "--config" "Debug" "--"
+Scanning dependencies of target Box2D
+[  4%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Joints/b2FrictionJoint.cpp.o
+[  4%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Joints/b2GearJoint.cpp.o
+[  6%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Joints/b2DistanceJoint.cpp.o
+[ 10%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Joints/b2Joint.cpp.o
+[ 10%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Joints/b2MotorJoint.cpp.o
+[ 12%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Joints/b2MouseJoint.cpp.o
+[ 14%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Joints/b2PrismaticJoint.cpp.o
+[ 17%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Joints/b2PulleyJoint.cpp.o
+[ 21%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Joints/b2RopeJoint.cpp.o
+[ 21%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Joints/b2RevoluteJoint.cpp.o
+[ 23%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Joints/b2WeldJoint.cpp.o
+[ 27%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Joints/b2WheelJoint.cpp.o
+[ 29%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2CircleContact.cpp.o
+[ 29%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2Contact.cpp.o
+[ 31%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2ContactSolver.cpp.o
+[ 34%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.o
+[ 36%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.o
+[ 38%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.o
+[ 40%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2ChainAndCircleContact.cpp.o
+[ 44%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.o
+[ 44%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/Contacts/b2PolygonContact.cpp.o
+[ 48%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/b2ContactManager.cpp.o
+[ 48%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/b2Body.cpp.o
+[ 51%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/b2Fixture.cpp.o
+[ 53%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/b2Island.cpp.o
+[ 55%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/b2World.cpp.o
+[ 59%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Common/b2BlockAllocator.cpp.o
+[ 59%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Dynamics/b2WorldCallbacks.cpp.o
+[ 61%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Common/b2Draw.cpp.o
+[ 63%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Common/b2Math.cpp.o
+[ 65%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Common/b2Settings.cpp.o
+[ 68%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Common/b2StackAllocator.cpp.o
+[ 72%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Common/b2Timer.cpp.o
+[ 72%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/Shapes/b2CircleShape.cpp.o
+[ 74%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/Shapes/b2EdgeShape.cpp.o
+[ 76%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/Shapes/b2ChainShape.cpp.o
+[ 78%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/Shapes/b2PolygonShape.cpp.o
+[ 80%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/b2BroadPhase.cpp.o
+[ 82%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/b2CollideCircle.cpp.o
+[ 85%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/b2CollideEdge.cpp.o
+[ 87%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/b2CollidePolygon.cpp.o
+[ 89%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/b2Collision.cpp.o
+[ 93%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/b2DynamicTree.cpp.o
+[ 93%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/b2Distance.cpp.o
+[ 95%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Collision/b2TimeOfImpact.cpp.o
+[ 97%] Building CXX object Box2D/CMakeFiles/Box2D.dir/Rope/b2Rope.cpp.o
+[100%] Linking CXX static library libBox2D.a
+[100%] Built target Box2D
+Install the project...
+-- Install configuration: "Debug"
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Box2D.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Collision/b2BroadPhase.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Collision/b2Collision.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Collision/b2Distance.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Collision/b2DynamicTree.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Collision/b2TimeOfImpact.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Collision/Shapes/b2CircleShape.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Collision/Shapes/b2EdgeShape.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Collision/Shapes/b2ChainShape.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Collision/Shapes/b2PolygonShape.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Collision/Shapes/b2Shape.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Common/b2BlockAllocator.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Common/b2Draw.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Common/b2GrowableStack.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Common/b2Math.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Common/b2Settings.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Common/b2StackAllocator.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Common/b2Timer.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/b2Body.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/b2ContactManager.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/b2Fixture.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/b2Island.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/b2TimeStep.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/b2World.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/b2WorldCallbacks.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Contacts/b2CircleContact.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Contacts/b2Contact.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Contacts/b2ContactSolver.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Contacts/b2PolygonContact.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Joints/b2DistanceJoint.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Joints/b2FrictionJoint.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Joints/b2GearJoint.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Joints/b2Joint.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Joints/b2MotorJoint.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Joints/b2MouseJoint.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Joints/b2PrismaticJoint.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Joints/b2PulleyJoint.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Joints/b2RevoluteJoint.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Joints/b2RopeJoint.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Joints/b2WeldJoint.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Dynamics/Joints/b2WheelJoint.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/include/Box2D/Rope/b2Rope.h
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/lib/libBox2D.a
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/lib/Box2D/Box2D-targets.cmake
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/lib/Box2D/Box2D-targets-debug.cmake
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/lib/cmake/Box2D/Box2DConfig.cmake
+-- Installing: /Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/lib/cmake/Box2D/UseBox2D.cmake
+cargo:root=/Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out
+cargo:rustc-link-search=native=/Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/lib
+TARGET = Some("x86_64-apple-darwin")
+OPT_LEVEL = Some("0")
+HOST = Some("x86_64-apple-darwin")
+CXX_x86_64-apple-darwin = None
+CXX_x86_64_apple_darwin = None
+HOST_CXX = None
+CXX = None
+CXXFLAGS_x86_64-apple-darwin = None
+CXXFLAGS_x86_64_apple_darwin = None
+HOST_CXXFLAGS = None
+CXXFLAGS = None
+CRATE_CC_NO_DEFAULTS = None
+DEBUG = Some("true")
+CARGO_CFG_TARGET_FEATURE = Some("cmpxchg16b,fxsr,sse,sse2,sse3,ssse3")
+running: "c++" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-arch" "x86_64" "-I" "Box2D/Box2D" "-Wall" "-Wextra" "-o" "/Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/frontend/lib.o" "-c" "frontend/lib.cpp"
+cargo:warning=In file included from frontend/lib.cpp:24:
+cargo:warning=frontend/dynamics/body.cpp:83:8: warning: 'Body_get_world_point' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 Body_get_world_point(const b2Body* self, const b2Vec2* local) {
+cargo:warning=       ^
+cargo:warning=frontend/dynamics/body.cpp:86:8: warning: 'Body_get_world_vector' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 Body_get_world_vector(const b2Body* self, const b2Vec2* local) {
+cargo:warning=       ^
+cargo:warning=frontend/dynamics/body.cpp:89:8: warning: 'Body_get_local_point' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 Body_get_local_point(const b2Body* self, const b2Vec2* world) {
+cargo:warning=       ^
+cargo:warning=frontend/dynamics/body.cpp:92:8: warning: 'Body_get_local_vector' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 Body_get_local_vector(const b2Body* self, const b2Vec2* world) {
+cargo:warning=       ^
+cargo:warning=frontend/dynamics/body.cpp:95:8: warning: 'Body_get_linear_velocity_from_world_point' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 Body_get_linear_velocity_from_world_point(const b2Body* self,
+cargo:warning=       ^
+cargo:warning=frontend/dynamics/body.cpp:99:8: warning: 'Body_get_linear_velocity_from_local_point' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 Body_get_linear_velocity_from_local_point(const b2Body* self,
+cargo:warning=       ^
+cargo:warning=In file included from frontend/lib.cpp:26:
+cargo:warning=frontend/dynamics/world.cpp:122:8: warning: 'World_get_gravity' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 World_get_gravity(const b2World* self) {
+cargo:warning=       ^
+cargo:warning=In file included from frontend/lib.cpp:32:
+cargo:warning=frontend/collision/shapes/circle_shape.cpp:36:8: warning: 'CircleShape_get_pos' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 CircleShape_get_pos(const b2CircleShape* self) {
+cargo:warning=       ^
+cargo:warning=In file included from frontend/lib.cpp:33:
+cargo:warning=frontend/collision/shapes/edge_shape.cpp:20:8: warning: 'EdgeShape_get_v1' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 EdgeShape_get_v1(const b2EdgeShape* self) {
+cargo:warning=       ^
+cargo:warning=frontend/collision/shapes/edge_shape.cpp:28:8: warning: 'EdgeShape_get_v2' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 EdgeShape_get_v2(const b2EdgeShape* self) {
+cargo:warning=       ^
+cargo:warning=In file included from frontend/lib.cpp:36:
+cargo:warning=frontend/dynamics/joints/joint.cpp:10:8: warning: 'Joint_get_anchor_a_virtual' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 Joint_get_anchor_a_virtual(const b2Joint* self) {
+cargo:warning=       ^
+cargo:warning=frontend/dynamics/joints/joint.cpp:13:8: warning: 'Joint_get_anchor_b_virtual' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 Joint_get_anchor_b_virtual(const b2Joint* self) {
+cargo:warning=       ^
+cargo:warning=frontend/dynamics/joints/joint.cpp:16:8: warning: 'Joint_get_reaction_force_virtual' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 Joint_get_reaction_force_virtual(const b2Joint* self,
+cargo:warning=       ^
+cargo:warning=In file included from frontend/lib.cpp:43:
+cargo:warning=frontend/dynamics/joints/pulley_joint.cpp:49:8: warning: 'PulleyJoint_get_ground_anchor_a' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 PulleyJoint_get_ground_anchor_a(const b2PulleyJoint* self) {
+cargo:warning=       ^
+cargo:warning=frontend/dynamics/joints/pulley_joint.cpp:52:8: warning: 'PulleyJoint_get_ground_anchor_b' has C-linkage specified, but returns user-defined type 'b2Vec2' which is incompatible with C [-Wreturn-type-c-linkage]
+cargo:warning=b2Vec2 PulleyJoint_get_ground_anchor_b(const b2PulleyJoint* self) {
+cargo:warning=       ^
+cargo:warning=15 warnings generated.
+exit code: 0
+AR_x86_64-apple-darwin = None
+AR_x86_64_apple_darwin = None
+HOST_AR = None
+AR = None
+running: "ar" "crs" "/Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/libbox2d_frontend.a" "/Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out/frontend/lib.o"
+exit code: 0
+cargo:rustc-link-lib=static=box2d_frontend
+cargo:rustc-link-search=native=/Users/hiroko/rl/gymnasium/target/rls/debug/build/wrapped2d-455e20cecdb43d91/out
+CXXSTDLIB_x86_64-apple-darwin = None
+CXXSTDLIB_x86_64_apple_darwin = None
+HOST_CXXSTDLIB = None
+CXXSTDLIB = None
+cargo:rustc-link-lib=c++
