@@ -1,3 +1,4 @@
+use ndarray::prelude::*;
 use rand::{Rng, thread_rng};
 use rand::distributions::Uniform;
 
@@ -9,7 +10,7 @@ pub struct Cartpole {
     polemass_length: f32,
     force_mag: f32,
     tau: f32,
-    state: (f32, f32, f32, f32),
+    state: Array2<f32>,
     x_threshold: f32,
     theta_threshold_radians: f32,
     steps_beyond_done: isize
@@ -34,7 +35,7 @@ impl Cartpole {
             polemass_length,
             force_mag,
             tau,
-            state: (0.0f32, 0.0f32, 0.0f32, 0.0f32),
+            state: Array2::<f32>::zeros((1, 4)),
             x_threshold: 2.4f32,
             theta_threshold_radians: 12.0 * 2.0 * std::f32::consts::PI / 360.0f32,
             steps_beyond_done: -1
@@ -42,7 +43,7 @@ impl Cartpole {
         }
     }
 
-    pub fn step(&mut self, action: usize) -> ((f32, f32, f32, f32), f32, bool) {
+    pub fn step(&mut self, action: usize) -> (Array2<f32>, f32, bool) {
         let force;
         if action == 1 {
             force = self.force_mag;
@@ -51,7 +52,10 @@ impl Cartpole {
             force = -self.force_mag;
         }
 
-        let (x, x_dot, theta, theta_dot) = self.state;
+        let x = self.state[[0, 0]];
+        let x_dot = self.state[[0, 1]];
+        let theta = self.state[[0, 2]];
+        let theta_dot = self.state[[0, 3]];
         let costheta = theta.cos();
         let sintheta = theta.sin();
 
@@ -64,7 +68,10 @@ impl Cartpole {
         let theta = theta + self.tau * theta_dot;
         let theta_dot = theta_dot + self.tau * thetaacc;
 
-        self.state = (x, x_dot, theta, theta_dot);
+        self.state[[0, 0]] = x;
+        self.state[[0, 1]] = x_dot;
+        self.state[[0, 2]] = theta;
+        self.state[[0, 3]] = theta_dot;
         let done =     x < -self.x_threshold 
                     || x > self.x_threshold
                     || theta < -self.theta_threshold_radians
@@ -82,13 +89,13 @@ impl Cartpole {
             self.steps_beyond_done += 1;
             reward = 0.0f32;
         }
-        return (self.state, reward, done)
+        return (self.state.clone(), reward, done)
     }
 
-    pub fn reset(&mut self) -> ((f32, f32, f32, f32), f32, bool) {
+    pub fn reset(&mut self) -> Array2<f32> {
         let mut rng = thread_rng();
         let side = Uniform::new(-0.05, 0.05);
         self.steps_beyond_done = -1;
-        return ((rng.sample(side), rng.sample(side), rng.sample(side), rng.sample(side)), 1.0f32, false);
+        return Array2::from_shape_vec((1, 4), vec![rng.sample(side), rng.sample(side), rng.sample(side), rng.sample(side)]).unwrap();
     }
 }
