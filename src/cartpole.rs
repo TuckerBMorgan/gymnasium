@@ -1,6 +1,7 @@
 use ndarray::prelude::*;
 use rand::{Rng, thread_rng};
 use rand::distributions::Uniform;
+use crate::enviroment::*;
 
 pub struct Cartpole {
     gravity: f32,
@@ -42,8 +43,13 @@ impl Cartpole {
 
         }
     }
+}
 
-    pub fn step(&mut self, action: usize) -> (Array2<f32>, f32, bool) {
+impl Enviroment for Cartpole {
+    fn step(&mut self, action: usize) -> StepReturn {
+        if action > 1 {
+            panic!("Bad input {} ", action);
+        }
         let force;
         if action == 1 {
             force = self.force_mag;
@@ -92,10 +98,18 @@ impl Cartpole {
         return (self.state.clone(), reward, done)
     }
 
-    pub fn reset(&mut self) -> Array2<f32> {
+    fn reset(&mut self) -> Array2<f32> {
         let mut rng = thread_rng();
         let side = Uniform::new(-0.05, 0.05);
         self.steps_beyond_done = -1;
         return Array2::from_shape_vec((1, 4), vec![rng.sample(side), rng.sample(side), rng.sample(side), rng.sample(side)]).unwrap();
+    }
+
+    fn opservation_space(&self) -> Vec<usize> {
+        return vec![1, 4];
+    }
+
+    fn action_space(&self) -> Vec<usize> {
+        return vec![1, 2];
     }
 }
