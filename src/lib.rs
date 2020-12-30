@@ -3,6 +3,7 @@ mod snake;
 mod cartpole;
 mod enviroment;
 mod acrobot;
+mod renderer;
 //mod mountain_car;
 
 pub mod prelude {

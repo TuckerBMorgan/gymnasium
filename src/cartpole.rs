@@ -2,6 +2,7 @@ use ndarray::prelude::*;
 use rand::{Rng, thread_rng};
 use rand::distributions::Uniform;
 use crate::enviroment::*;
+use crate::renderer::*;
 
 pub struct Cartpole {
     gravity: f32,
@@ -14,7 +15,8 @@ pub struct Cartpole {
     state: Array2<f32>,
     x_threshold: f32,
     theta_threshold_radians: f32,
-    steps_beyond_done: isize
+    steps_beyond_done: isize,
+    renderer: Renderer
 }
 
 impl Cartpole {
@@ -39,8 +41,8 @@ impl Cartpole {
             state: Array2::<f32>::zeros((1, 4)),
             x_threshold: 2.4f32,
             theta_threshold_radians: 12.0 * 2.0 * std::f32::consts::PI / 360.0f32,
-            steps_beyond_done: -1
-
+            steps_beyond_done: -1,
+            renderer: Renderer::new(600, 400)
         }
     }
 }
@@ -102,7 +104,8 @@ impl Enviroment for Cartpole {
         let mut rng = thread_rng();
         let side = Uniform::new(-0.05, 0.05);
         self.steps_beyond_done = -1;
-        return Array2::from_shape_vec((1, 4), vec![rng.sample(side), rng.sample(side), rng.sample(side), rng.sample(side)]).unwrap();
+        self.state = Array2::from_shape_vec((1, 4), vec![rng.sample(side), rng.sample(side), rng.sample(side), rng.sample(side)]).unwrap();
+        return self.state.clone();
     }
 
     fn opservation_space(&self) -> Vec<usize> {
@@ -111,5 +114,48 @@ impl Enviroment for Cartpole {
 
     fn action_space(&self) -> Vec<usize> {
         return vec![1, 2];
+    }
+
+    fn render(&mut self) {
+        let world_width = self.x_threshold * 2.0f32;
+        let screen_width = 600;
+        let scale = screen_width as f32 / world_width as f32;
+        let carty = 100;
+        let polewidth = 10.0f32;
+        let polelen = scale * (2.0f32 * self.length);
+        let cartwidth = 50.0;
+        let cartheight = 30.0;
+
+        let l = -cartwidth / 2.0;
+        let r = cartwidth / 2.0;
+        let t = cartheight / 2.0;
+        let b = -cartheight / 2.0;
+
+        let cart_polygons = vec![(l as usize, b as usize), 
+                                 (l as usize, t as usize), 
+                                 (r as usize, t as usize), 
+                                 (r as usize, b as usize),
+                                 (l as usize, b as usize)];
+        let l = -polewidth / 2.;
+        let r = polewidth / 2.;
+        let t = polelen - polewidth / 2.;
+        let b = -polewidth / 2.;
+
+        let pole_polygons = vec![(l as usize, b as usize), 
+                                 (l as usize, t as usize), 
+                                 (r as usize, t as usize), 
+                                 (r as usize, b as usize),
+                                 (l as usize, b as usize)];
+
+        let axeloffset = cartheight / 4.0f32;
+        let cartx = self.state[[0, 0]] * scale + screen_width as f32 / 2.0;
+        let cart_transform = Renderer::create_transform((cartx , carty as f32), 1., 0.0);
+        let pole_transform = Renderer::create_transform((cartwidth / 4., axeloffset), 1.0, -self.state[[0, 2]]);
+        let pole_in_cart_space = &cart_transform.dot(&pole_transform);
+
+        self.renderer.clear_screen();
+        self.renderer.draw_polygon(&cart_polygons, &cart_transform, 0);
+        self.renderer.draw_polygon(&pole_polygons, &pole_in_cart_space, 14730072);//I think that that is tan?
+        self.renderer.render();
     }
 }

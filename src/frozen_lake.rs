@@ -2,6 +2,7 @@ use ndarray::prelude::*;
 use std::collections::HashMap;
 use rand::prelude::*;
 use crate::enviroment::*;
+use crate::renderer::*;
 
 pub struct FrozenLake {
     pub transition_diagram: HashMap<usize, [usize;4]>,
@@ -89,5 +90,9 @@ impl Enviroment for FrozenLake {
 
     fn action_space(&self) -> Vec<usize> {
         return vec![1, 4];
+    }
+
+    fn render(&mut self) {
+        panic!("Frozen lake render: Need to write something for this")
     }
 }

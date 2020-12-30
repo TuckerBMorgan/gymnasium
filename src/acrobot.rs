@@ -3,6 +3,8 @@ use ndarray::prelude::*;
 use rand::prelude::*;
 use rand::distributions::Uniform;
 use crate::enviroment::*;
+use crate::renderer::*;
+
 
 const LINK_LENGTH_1 : f32 = 1.;
 const LINK_LENGTH_2 : f32 = 1.;
@@ -17,14 +19,16 @@ const MAX_VEL_2 : f32 = 9. * std::f32::consts::PI;
 const AVAIL_TORQUE : [f32; 3] = [-1., 0., 1.];
 
 pub struct Acrobot {
-    state: Vec<f32>
+    state: Vec<f32>,
+    renderer: Renderer
 }
 
 impl Acrobot {
 
     pub fn new() -> Acrobot {
         Acrobot {
-            state: vec![]
+            state: vec![],
+            renderer: Renderer::new(500, 500)
         }
     }
 
@@ -70,7 +74,7 @@ impl Acrobot {
         return yout[yout.len() - 1].clone();
     }
     
-    //In the original pythong there is a unsued "t" paramter, what, why, stop 
+    //In the original python there is a unsued "t" paramter, what, why, stop 
     fn _dsdt(s_augmented: Vec<f32>) -> Vec<f32> {
         let m1 = LINK_MASS_1;
         let m2 = LINK_MASS_2;
@@ -158,6 +162,37 @@ impl Enviroment for Acrobot {
 
     fn action_space(&self) -> Vec<usize> {
         return vec![1, 2]
+    }
+
+    fn render(&mut self) {
+        //This might not be needed :|
+        let bound = LINK_LENGTH_1 + LINK_LENGTH_2 + 0.2;
+        let p1 = vec![-LINK_LENGTH_1 * self.state[0].cos(),LINK_LENGTH_1 * self.state[0].sin()];
+
+        let p2 = vec![p1[0] - LINK_LENGTH_1 * (self.state[0] + self.state[1]).cos(),
+                      p1[1] + LINK_LENGTH_2 * (self.state[0] + self.state[1].sin())];
+        let xys = vec![p2, p1, vec![0., 0.]];
+        let thetas = vec![self.state[0] - std::f32::consts::PI / 2.0, self.state[0] + self.state[1] - std::f32::consts::PI / 2.];
+        let link_lengths = vec![LINK_LENGTH_1, LINK_LENGTH_2];
+        //This has a decial x value in the original python, I have done my thing
+
+       // self.renderer.draw_line(1, 0, 5, 0);
+
+        let l = 0;
+        let t = 100;
+        let b = 0;
+        self.renderer.clear_screen();
+        let scale_x = 
+        let world_transform = Renderer::create_transform((0, 1000 * ), scale: f32, rotation: f32)
+
+        for i in 0..1 {
+            let r = link_lengths[i];
+            let transform = Renderer::create_transform((xys[i][0] as f32, xys[i][1] as f32), 1., 0.);
+            let link_polygons = vec![(l, b), (l, t), (r as usize, t), (r as usize, b)];
+            self.renderer.draw_polygon(&link_polygons, &transform, 0);
+        }z`
+
+        self.renderer.render();
     }
 
 }
